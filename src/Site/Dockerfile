@@ -9,6 +9,7 @@ ARG BUILD_CONFIGURATION=Release
 COPY . .
 RUN ls
 WORKDIR /src/Site
+RUN ls
 COPY ["Site.csproj", "./"]
 RUN dotnet restore "Site.csproj"
 RUN dotnet build "Site.csproj" -c $BUILD_CONFIGURATION -o /app/build
